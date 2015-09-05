@@ -1,5 +1,4 @@
-var webpack = require('webpack');
-var config  = require('./webpack.config.js');
+var config  = require("./webpack.config.js");
 
 var prodConfig = {
   devtool: "source-map",
@@ -14,7 +13,7 @@ var prodConfig = {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel" },
     ].concat(config.module.loaders),
   },
 };

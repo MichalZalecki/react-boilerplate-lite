@@ -4,20 +4,19 @@ Setup for React apps. It's not going to force you to use any specyfic toolset/fr
 
 ## Scripts
 
-Start **Express**
+Start **Express** (for production)
 
 ```bash
 npm start
-NODE_ENV=production npm start # force production
 ```
 
-Start **Express** `&` **WebpackDevServer** (*needed only in development*)
+Start **WebpackDevServer** (for development)
 
 ```bash
 npm run dev
 ```
 
-Build (*needed only in production*)
+Build (also run in *postinstall*)
 
 ```bash
 npm run build

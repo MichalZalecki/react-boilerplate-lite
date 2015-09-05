@@ -6,11 +6,11 @@ devConfig = {
   devtool: "eval",
 
   entry: [
-    "webpack-dev-server/client?http://localhost:9090",
+    "webpack-dev-server/client?http://localhost:8080",
     "webpack/hot/only-dev-server"
   ].concat(config.entry),
 
-  output: extend(config.output, { publicPath: "http://localhost:9090/" }),
+  output: extend(config.output, { publicPath: "http://localhost:8080/" }),
 
   resolve: config.resolve,
 

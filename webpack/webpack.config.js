@@ -1,21 +1,25 @@
-var path    = require("path");
-var webpack = require("webpack");
+var path              = require("path");
+var HTMLWebpackPlugin = require("html-webpack-plugin");
 
 var config = {
   entry: [
-    path.join(__dirname, "..", "src", "index.js"),
+    path.resolve("src/index.js"),
   ],
 
   output: {
-    path: path.join(__dirname, "..", "build"),
+    path: path.resolve("build"),
     filename: "app.js",
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ["", ".js", ".jsx"],
   },
 
-  plugins: [],
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: path.resolve("src/index.html"),
+    }),
+  ],
 
   module: {
     loaders: [],
