@@ -5,6 +5,7 @@ var config           = require("../webpack/webpack.dev.config");
 var webpackDevServer = new WebpackDevServer(webpack(config), {
   hot: true,
   historyApiFallback: true,
+  stats: { colors: true },
 });
 
 webpackDevServer.listen(8080, "localhost", function (err) {
