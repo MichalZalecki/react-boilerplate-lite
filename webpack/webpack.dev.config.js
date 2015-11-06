@@ -21,7 +21,7 @@ devConfig = {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot!babel" },
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot" },
     ].concat(config.module.loaders),
   },
 };

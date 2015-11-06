@@ -12,9 +12,7 @@ var prodConfig = {
   plugins: config.plugins,
 
   module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel" },
-    ].concat(config.module.loaders),
+    loaders: [].concat(config.module.loaders),
   },
 };
 
