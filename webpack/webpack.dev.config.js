@@ -22,8 +22,11 @@ devConfig = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot" },
+      { test: /\.css$/, loader: "style!css?sourceMap!postcss" },
     ].concat(config.module.loaders),
   },
+
+  postcss: config.postcss,
 };
 
 module.exports = devConfig;

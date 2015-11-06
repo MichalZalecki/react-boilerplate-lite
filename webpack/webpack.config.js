@@ -30,6 +30,14 @@ var config = {
         presets: ["es2015", "stage-0", "react"],
       } },
     ],
+  },
+
+  postcss: function () {
+    return [
+      require("postcss-partial-import"),
+      require("postcss-nested"),
+      require("cssnext")(),
+    ];
   }
 };
 

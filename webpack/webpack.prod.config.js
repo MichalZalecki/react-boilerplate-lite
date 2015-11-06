@@ -1,4 +1,5 @@
-var config  = require("./webpack.config.js");
+var config            = require("./webpack.config.js");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var prodConfig = {
   devtool: "source-map",
@@ -9,11 +10,19 @@ var prodConfig = {
 
   output: config.output,
 
-  plugins: config.plugins,
+  plugins: [
+    new ExtractTextPlugin("styles.css"),
+  ].concat(config.plugins),
 
   module: {
-    loaders: [].concat(config.module.loaders),
+    loaders: [
+      { test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style", "css?sourceMap!postcss"),
+      },
+    ].concat(config.module.loaders),
   },
+
+  postcss: config.postcss,
 };
 
 module.exports = prodConfig;
