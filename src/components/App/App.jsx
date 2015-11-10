@@ -1,10 +1,10 @@
 import "./App.css";
 import React from "react";
 
-const template = () => (
-  <div className="app">
-    <h1 className="app__title">Hello World!</h1>
-  </div>
-);
-
-export default template;
+export default function () {
+  return (
+    <div className="app">
+      <h1 className="app__title">{ this.state.text }</h1>
+    </div>
+  );
+};
