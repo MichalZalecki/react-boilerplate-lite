@@ -21,3 +21,7 @@ Build (also run in *postinstall*)
 ```bash
 npm run build
 ```
+
+## Do not using React?
+
+Check out pure [EcmaScript 2016+ The Boring Part](https://github.com/MichalZalecki/react-the-boring-part/tree/pure-es) branch!
