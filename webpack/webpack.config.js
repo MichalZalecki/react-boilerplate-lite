@@ -1,3 +1,4 @@
+var webpack           = require("webpack");
 var path              = require("path");
 var HTMLWebpackPlugin = require("html-webpack-plugin");
 
@@ -34,9 +35,13 @@ var config = {
 
   postcss: function () {
     return [
-      require("postcss-partial-import"),
-      require("postcss-nested"),
-      require("cssnext")(),
+      require("postcss-import")({ addDependencyTo: webpack }),
+      require("postcss-url")(),
+      require("postcss-cssnext")(),
+      require("postcss-nested")(),
+      // add your "plugins" here
+      require("postcss-browser-reporter")(),
+      require("postcss-reporter")(),
     ];
   }
 };
