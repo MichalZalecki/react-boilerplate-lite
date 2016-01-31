@@ -22,6 +22,7 @@ var config = {
   plugins: [
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
+      minify: { collapseWhitespace: true },
     }),
   ],
 
