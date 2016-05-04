@@ -13,7 +13,7 @@ npm start
 Start **WebpackDevServer** (for development)
 
 ```bash
-npm run dev
+npm run start:dev
 ```
 
 Build (also run in *postinstall*)
