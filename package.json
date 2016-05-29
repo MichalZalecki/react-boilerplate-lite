@@ -1,6 +1,6 @@
 {
   "name": "react-the-boring-part",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "postinstall": "npm run build",
     "build": "webpack --config webpack/webpack.prod.config.js -p",
     "clean": "rm -rf build",
+    "lint": "eslint src --ext .js*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Michał Załęcki <michal@michalzalecki.com>",
@@ -39,6 +40,13 @@
     "webpack": "^1.12.14"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-import-resolver-webpack": "^0.2.4",
+    "eslint-plugin-import": "^1.6.1",
+    "eslint-plugin-jsx-a11y": "^1.0.4",
+    "eslint-plugin-react": "^5.0.1",
     "extend": "^3.0.0",
     "webpack-dev-server": "^1.14.1"
   }

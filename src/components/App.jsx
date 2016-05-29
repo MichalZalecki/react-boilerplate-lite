@@ -1,5 +1,5 @@
 import React from "react";
-import cls   from "./App.css";
+import cls from "./App.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={ cls.app }>
-        <h1 className={ cls.app__title }>{ this.state.text }</h1>
+      <div className={cls.app}>
+        <h1 className={cls.app__title}>{this.state.text}</h1>
       </div>
     );
   }
