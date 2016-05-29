@@ -1,8 +1,8 @@
-var webpack = require("webpack");
-var config  = require("./webpack.config.js");
-var extend  = require("extend");
+const webpack = require("webpack");
+const config = require("./webpack.config.js");
+const extend = require("extend");
 
-devConfig = {
+const devConfig = {
   devtool: "inline-source-map",
 
   entry: [

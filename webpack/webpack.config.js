@@ -1,8 +1,8 @@
-var webpack           = require("webpack");
-var path              = require("path");
-var HTMLWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-var config = {
+const config = {
   entry: [
     path.resolve("src/index.js"),
   ],
@@ -15,8 +15,8 @@ var config = {
   resolve: {
     extensions: ["", ".js", ".jsx"],
     alias: {
-      "app": path.resolve(__dirname, "../src"),
-    }
+      src: path.resolve(__dirname, "../src"),
+    },
   },
 
   plugins: [
@@ -42,7 +42,7 @@ var config = {
       require("postcss-browser-reporter")(),
       require("postcss-reporter")(),
     ];
-  }
+  },
 };
 
 module.exports = config;
