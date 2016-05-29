@@ -27,7 +27,3 @@ Make sure you are creating React bundle in `production` environment.
 ## You aren't using React?
 
 Check out pure [EcmaScript 2016+ The Boring Part](https://github.com/MichalZalecki/react-the-boring-part/tree/pure-es) branch!
-
-## Are you testing with Karma and Webpack?
-
-Check out [Run tests with Karma and Webpack](https://github.com/MichalZalecki/react-the-boring-part/tree/karma-webpack) branch!
