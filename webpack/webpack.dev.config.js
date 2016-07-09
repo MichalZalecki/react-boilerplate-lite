@@ -7,7 +7,7 @@ const devConfig = {
 
   entry: [
     "webpack-dev-server/client?http://localhost:8080",
-    "webpack/hot/only-dev-server"
+    "webpack/hot/only-dev-server",
   ].concat(config.entry),
 
   output: extend(config.output, { publicPath: "http://localhost:8080/" }),
