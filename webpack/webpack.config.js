@@ -1,10 +1,12 @@
+/* eslint global-require: 0 */
+
 const webpack = require("webpack");
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: [
-    path.resolve("src/index.js"),
+    path.resolve("src/index.jsx"),
   ],
 
   output: {
@@ -32,7 +34,7 @@ const config = {
     ],
   },
 
-  postcss: function () {
+  postcss() {
     return [
       require("postcss-import")({ addDependencyTo: webpack }),
       require("postcss-url")(),

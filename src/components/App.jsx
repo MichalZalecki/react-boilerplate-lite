@@ -12,8 +12,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={cls.app}>
-        <h1 className={cls.app__title}>{this.state.text}</h1>
+      <div>
+        <h1 className={cls.title}>{this.state.text}</h1>
       </div>
     );
   }

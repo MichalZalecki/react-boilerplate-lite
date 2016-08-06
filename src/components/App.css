@@ -1,5 +1,3 @@
-:local(.app) {}
-
-:local(.app__title) {
+:local(.title) {
   color: purple;
 }
