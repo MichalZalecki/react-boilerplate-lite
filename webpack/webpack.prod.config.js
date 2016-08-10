@@ -1,5 +1,6 @@
-const config = require("./webpack.config.js");
+const config = require("./webpack.config");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const extend = require("extend");
 
 const prodConfig = {
   devtool: "source-map",
@@ -8,7 +9,7 @@ const prodConfig = {
 
   resolve: config.resolve,
 
-  output: config.output,
+  output: extend(config.output, { publicPath: "/" }),
 
   plugins: [
     new ExtractTextPlugin("styles.css"),

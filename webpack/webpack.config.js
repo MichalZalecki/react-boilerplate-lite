@@ -11,7 +11,7 @@ const config = {
 
   output: {
     path: path.resolve("build"),
-    filename: "app.js",
+    filename: "app.[hash].js",
   },
 
   resolve: {
@@ -22,6 +22,7 @@ const config = {
   },
 
   plugins: [
+    new webpack.EnvironmentPlugin(["NODE_ENV"]),
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
       minify: { collapseWhitespace: true },

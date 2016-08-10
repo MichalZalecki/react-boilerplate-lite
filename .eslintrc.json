@@ -6,6 +6,10 @@
       "webpack": { "config": "./webpack/webpack.prod.config.js" }
     }
   },
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "rules": {
     "quotes": ["error", "double"],
     "no-unused-vars": ["error", { "vars": "local", "args": "after-used", "argsIgnorePattern": "^_" }]

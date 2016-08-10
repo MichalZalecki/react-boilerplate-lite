@@ -1,14 +1,14 @@
-var express = require("express");
-var path    = require("path");
+const express = require("express");
+const path = require("path");
 
-var server = express();
+const server = express();
 
-server.use(express.static('build'));
+server.use(express.static("build"));
 
-server.get('*', function (req, res) {
+server.get("*", (req, res) => {
   res.sendFile(path.resolve("build/index.html"));
 });
 
-var listener = server.listen(process.env.PORT || 8080, function () {
-  console.log("Express server listening on port %d", listener.address().port)
+const listener = server.listen(process.env.PORT || 8080, () => {
+  console.log("express started at http://localhost:%d", listener.address().port);
 });

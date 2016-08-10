@@ -1,7 +1,7 @@
 {
   "name": "react-the-boring-part",
-  "version": "1.3.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Setup for React apps",
   "main": "src/index.js",
   "scripts": {
     "start": "node server/server.js",
@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Michał Załęcki <michal@michalzalecki.com>",
-  "license": "WTFPL",
+  "license": "MIT",
   "dependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.13.2",
@@ -23,6 +23,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
     "express": "^4.14.0",
+    "extend": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "postcss": "^5.1.1",
@@ -47,7 +48,6 @@
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
-    "extend": "^3.0.0",
     "webpack-dev-server": "^1.14.1"
   }
 }

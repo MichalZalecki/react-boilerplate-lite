@@ -1,14 +1,16 @@
-var webpack          = require("webpack");
-var WebpackDevServer = require("webpack-dev-server");
-var config           = require("../webpack/webpack.dev.config");
+const webpack = require("webpack");
+const WebpackDevServer = require("webpack-dev-server");
+const config = require("../webpack/webpack.dev.config");
 
-var webpackDevServer = new WebpackDevServer(webpack(config), {
+const PORT = process.env.PORT || 8080;
+
+const webpackDevServer = new WebpackDevServer(webpack(config), {
   hot: true,
   historyApiFallback: true,
   stats: { colors: true },
 });
 
-webpackDevServer.listen(8080, "localhost", function (err) {
+webpackDevServer.listen(PORT, "localhost", err => {
   if (err) throw err;
-  console.log("Webpack Dev Server started at %d", 8080);
+  console.log("webpack-dev-server started at http://localhost:%d", PORT);
 });
