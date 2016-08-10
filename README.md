@@ -30,6 +30,6 @@ NODE_ENV=production npm run build
 You can specify `PORT` for both: development and production server (default to `8080`).
 
 ```
-PORT=8081 npm start:dev
 PORT=5000 npm start
+PORT=8081 npm run start:dev
 ```
