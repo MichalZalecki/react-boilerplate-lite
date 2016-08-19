@@ -1,5 +1,7 @@
 /* eslint global-require: 0 */
 
+require("dotenv").config({ silent: true });
+
 const webpack = require("webpack");
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
