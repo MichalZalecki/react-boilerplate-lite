@@ -14,10 +14,16 @@ Start **express** (serving files in production).
 npm start
 ```
 
-Start **webpack-dev-server** (for development).
+Start **express with webpack-dev-middleware** (in development).
 
 ```bash
 npm run start:dev
+```
+
+Start **express with webpack-dev-middleware and webpack-dashboard** (for SWAG).
+
+```bash
+npm run start:dashboard
 ```
 
 Build (also run in `postinstall`). Make sure you are creating React bundle in `production`

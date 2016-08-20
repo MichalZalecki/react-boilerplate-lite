@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server/server.js",
     "start:dev": "node server/dev-server",
+    "start:dashboard": "webpack-dashboard node server/dev-server",
     "postinstall": "npm run build",
     "build": "webpack --config webpack/webpack.prod.config.js -p",
     "clean": "rm -rf build",
@@ -48,6 +49,7 @@
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
+    "webpack-dashboard": "^0.1.6",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.12.2"
