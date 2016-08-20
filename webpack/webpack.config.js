@@ -14,6 +14,7 @@ const config = {
   output: {
     path: path.resolve("build"),
     filename: "app.[hash].js",
+    publicPath: "/",
   },
 
   resolve: {

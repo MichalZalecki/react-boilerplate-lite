@@ -1,11 +1,11 @@
 {
   "name": "react-the-boring-part",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "description": "Setup for React apps",
   "main": "src/index.js",
   "scripts": {
     "start": "node server/server.js",
-    "start:dev": "node server/webpack-dev-server",
+    "start:dev": "node server/dev-server",
     "postinstall": "npm run build",
     "build": "webpack --config webpack/webpack.prod.config.js -p",
     "clean": "rm -rf build",
@@ -24,7 +24,6 @@
     "css-loader": "^0.23.1",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
-    "extend": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "postcss": "^5.1.1",
@@ -49,6 +48,8 @@
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.12.2"
   }
 }

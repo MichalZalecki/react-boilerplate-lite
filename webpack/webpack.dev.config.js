@@ -1,18 +1,14 @@
 const webpack = require("webpack");
 const config = require("./webpack.config");
-const extend = require("extend");
-
-const PORT = process.env.PORT || 8080;
 
 const devConfig = {
   devtool: "inline-source-map",
 
   entry: [
-    `webpack-dev-server/client?http://localhost:${PORT}`,
-    "webpack/hot/only-dev-server",
+    "webpack-hot-middleware/client?reload=true",
   ].concat(config.entry),
 
-  output: extend(config.output, { publicPath: `http://localhost:${PORT}/` }),
+  output: config.output,
 
   resolve: config.resolve,
 
