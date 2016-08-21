@@ -1,14 +1,18 @@
 const express = require("express");
+const compression = require("compression");
 const path = require("path");
 
-const server = express();
+const app = express();
 
-server.use(express.static("build"));
+app.use(compression());
+app.use(express.static("build", {
+  // etag: false
+}));
 
-server.get("*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.resolve("build/index.html"));
 });
 
-const listener = server.listen(process.env.PORT || 8080, () => {
+const listener = app.listen(process.env.PORT || 8080, () => {
   console.log("express started at port %d", listener.address().port);
 });
