@@ -4,6 +4,8 @@ const path = require("path");
 
 const app = express();
 
+app.set("x-powered-by", false);
+
 app.use(compression());
 app.use(express.static("build", {
   // etag: false
