@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const config = require("./webpack.config");
 
 const devConfig = {
-  devtool: "source-map",
+  devtool: "eval",
 
   entry: [
     "webpack-hot-middleware/client?reload=true",
