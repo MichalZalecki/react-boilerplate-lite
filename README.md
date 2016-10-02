@@ -6,6 +6,13 @@ and deploy app without pain. It's not a bare minimum, although I've tried to kee
 
 Working with Heroku/Dokku out of the box.
 
+## Installation
+
+```
+cp .env-example .env
+npm install
+```
+
 ## Usage
 
 Start **express** (serving files in production).
