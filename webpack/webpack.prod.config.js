@@ -11,7 +11,7 @@ const prodConfig = {
   output: config.output,
 
   plugins: [
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin("styles.[hash].css"),
   ].concat(config.plugins),
 
   module: {
