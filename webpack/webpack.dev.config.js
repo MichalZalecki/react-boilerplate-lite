@@ -20,7 +20,13 @@ const devConfig = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot" },
-      { test: /\.css$/, loader: "style!css?sourceMap&localIdentName=[local]_[hash:base64:4]!postcss" },
+      { test: /\.css$/,
+        loaders: [
+          "style",
+          "css?sourceMap&localIdentName=[local]---[hash:base64:5]&importLoaders=1",
+          "postcss",
+        ],
+      },
     ].concat(config.module.loaders),
   },
 
