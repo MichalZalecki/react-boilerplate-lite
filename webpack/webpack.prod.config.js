@@ -1,5 +1,9 @@
+const webpack = require("webpack");
 const config = require("./webpack.config");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractText = (fallback, use) =>
+  ExtractTextPlugin.extract({ fallback, use });
 
 const prodConfig = {
   devtool: "source-map",
@@ -11,18 +15,17 @@ const prodConfig = {
   output: config.output,
 
   plugins: [
-    new ExtractTextPlugin("styles.[hash].css"),
-  ].concat(config.plugins),
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true, comments: false }),
+    new ExtractTextPlugin({ filename: "styles.[hash].css", allChunks: true }),
+    ...config.plugins,
+  ],
 
   module: {
-    loaders: [
-      { test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style", "css?sourceMap&importLoaders=1!postcss"),
-      },
-    ].concat(config.module.loaders),
+    rules: [
+      { test: /\.css$/, loader: extractText("style-loader", "css-loader?sourceMaps!postcss-loader") },
+      ...config.module.rules,
+    ],
   },
-
-  postcss: config.postcss,
 };
 
 module.exports = prodConfig;

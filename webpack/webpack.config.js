@@ -18,10 +18,7 @@ const config = {
   },
 
   resolve: {
-    extensions: ["", ".js", ".jsx"],
-    alias: {
-      src: path.resolve(__dirname, "../src"),
-    },
+    extensions: [".js", ".jsx"],
   },
 
   plugins: [
@@ -33,21 +30,9 @@ const config = {
   ],
 
   module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel" },
+    rules: [
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
     ],
-  },
-
-  postcss() {
-    return [
-      require("postcss-import")({ addDependencyTo: webpack }),
-      require("postcss-url")(),
-      require("postcss-cssnext")(),
-      require("postcss-nested")(),
-      // add your "plugins" here
-      require("postcss-browser-reporter")(),
-      require("postcss-reporter")(),
-    ];
   },
 };
 

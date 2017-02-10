@@ -28,5 +28,5 @@ app.get("*", (req, res) => {
 });
 
 const listener = app.listen(PORT, () => {
-  console.log("express started at http://localhost:%d", listener.address().port);
+  console.log("Express started at http://localhost:%d", listener.address().port);
 });

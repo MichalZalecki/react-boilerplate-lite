@@ -5,32 +5,28 @@ const devConfig = {
   devtool: "eval",
 
   entry: [
+    "react-hot-loader/patch",
     "webpack-hot-middleware/client?reload=true",
-  ].concat(config.entry),
-
-  output: config.output,
+    ...config.entry,
+  ],
 
   resolve: config.resolve,
 
+  output: config.output,
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-  ].concat(config.plugins),
+    new webpack.NoEmitOnErrorsPlugin(),
+    ...config.plugins,
+  ],
 
   module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot" },
-      { test: /\.css$/,
-        loaders: [
-          "style",
-          "css?sourceMap&localIdentName=[local]---[hash:base64:5]&importLoaders=1",
-          "postcss",
-        ],
-      },
-    ].concat(config.module.loaders),
+    rules: [
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot-loader/webpack" },
+      { test: /\.css$/, loader: "style-loader!css-loader!postcss-loader" },
+      ...config.module.rules,
+    ],
   },
-
-  postcss: config.postcss,
 };
 
 module.exports = devConfig;
