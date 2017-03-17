@@ -5,6 +5,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const extractText = (fallback, use) =>
   ExtractTextPlugin.extract({ fallback, use });
 
+const CSS_LOADER_OPTIONS = "sourceMaps&minimize";
+
 const prodConfig = {
   devtool: "source-map",
 
@@ -22,7 +24,7 @@ const prodConfig = {
 
   module: {
     rules: [
-      { test: /\.css$/, loader: extractText("style-loader", "css-loader?sourceMaps!postcss-loader") },
+      { test: /\.css$/, loader: extractText("style-loader", `css-loader?${CSS_LOADER_OPTIONS}!postcss-loader`) },
       ...config.module.rules,
     ],
   },

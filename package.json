@@ -8,7 +8,7 @@
     "start:dev": "node server/dev-server",
     "start:dashboard": "webpack-dashboard node server/dev-server",
     "postinstall": "npm run build",
-    "build": "webpack --config webpack/webpack.prod.config.js -p",
+    "build": "webpack --config webpack/webpack.prod.config.js",
     "clean": "rm -rf build",
     "lint": "eslint src --ext .js*",
     "test": "echo \"Error: no test specified\" && exit 1"
