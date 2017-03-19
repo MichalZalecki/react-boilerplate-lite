@@ -1,6 +1,8 @@
 const webpack = require("webpack");
 const config = require("./webpack.config");
 
+const CSS_LOADER_OPTIONS = "localIdentName=[local]--[hash:base64:5]";
+
 const devConfig = {
   devtool: "eval",
 
@@ -23,7 +25,7 @@ const devConfig = {
   module: {
     rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot-loader/webpack" },
-      { test: /\.css$/, loader: "style-loader!css-loader!postcss-loader" },
+      { test: /\.css$/, loader: `style-loader!css-loader?${CSS_LOADER_OPTIONS}!postcss-loader` },
       ...config.module.rules,
     ],
   },
