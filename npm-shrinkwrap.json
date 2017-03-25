@@ -1,5 +1,5 @@
 {
-  "name": "react-the-boring-part",
+  "name": "react-boilerplate-lite",
   "version": "0.0.0",
   "dependencies": {
     "accepts": {

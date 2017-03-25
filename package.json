@@ -1,7 +1,7 @@
 {
-  "name": "react-the-boring-part",
+  "name": "react-boilerplate-lite",
   "version": "0.0.0",
-  "description": "Setup for React apps",
+  "description": "Minimal boilerplate for React apps",
   "main": "src/index.js",
   "scripts": {
     "start": "node server/server.js",

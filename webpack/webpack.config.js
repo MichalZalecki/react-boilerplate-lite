@@ -1,5 +1,3 @@
-/* eslint global-require: 0 */
-
 require("dotenv").config({ silent: true });
 
 const webpack = require("webpack");

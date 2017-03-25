@@ -1,8 +1,7 @@
-# React The Boring Part
+# React Boilerlate Lite
 
-Setup for React apps. It's not going to force you to use any specific toolset/framework. Be free
-and make **your** choice. *React The Boring Part* is just a setup which allows you to develop
-and deploy app without pain. It's not a bare minimum, although I've tried to keep things simple.
+Minimal boilerplate for React apps. It's not going to force you to use any specific toolset/framework.
+*React Boilerlate Lite* is just a setup which allows you to develop and deploy without pain.
 
 Working with Heroku/Dokku out of the box.
 
