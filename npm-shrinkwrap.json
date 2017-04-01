@@ -647,6 +647,11 @@
       "resolved": "https://registry.npmjs.org/base64id/-/base64id-1.0.0.tgz",
       "dev": true
     },
+    "basic-auth": {
+      "version": "1.1.0",
+      "from": "basic-auth@>=1.1.0 <1.2.0",
+      "resolved": "https://registry.npmjs.org/basic-auth/-/basic-auth-1.1.0.tgz"
+    },
     "batch": {
       "version": "0.5.3",
       "from": "batch@0.5.3",
@@ -3343,6 +3348,11 @@
       "version": "0.5.1",
       "from": "mkdirp@>=0.5.1 <0.6.0",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
+    },
+    "morgan": {
+      "version": "1.8.1",
+      "from": "morgan@latest",
+      "resolved": "https://registry.npmjs.org/morgan/-/morgan-1.8.1.tgz"
     },
     "ms": {
       "version": "0.7.2",

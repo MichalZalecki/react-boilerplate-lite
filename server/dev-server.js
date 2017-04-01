@@ -1,10 +1,12 @@
 const path = require("path");
 const express = require("express");
+const morgan = require("morgan");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
-const config = require("../webpack/webpack.dev.config");
 const DashboardPlugin = require("webpack-dashboard/plugin");
+
+const config = require("../webpack/webpack.dev.config");
 
 const PORT = process.env.PORT || 8080;
 
@@ -19,6 +21,7 @@ const middleware = webpackDevMiddleware(compiler, {
   stats: { colors: true },
 });
 
+app.use(morgan("dev"));
 app.use(middleware);
 app.use(webpackHotMiddleware(compiler));
 

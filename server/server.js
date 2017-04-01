@@ -1,4 +1,5 @@
 const express = require("express");
+const morgan = require("morgan");
 const compression = require("compression");
 const path = require("path");
 
@@ -7,6 +8,7 @@ const app = express();
 app.set("x-powered-by", false);
 
 app.use(compression());
+app.use(morgan("tiny"));
 app.use(express.static("build", {
   // etag: false
 }));
