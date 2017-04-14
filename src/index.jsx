@@ -8,7 +8,7 @@ function render(Root) {
     <AppContainer>
       <Root />
     </AppContainer>,
-    document.getElementById("root")
+    document.getElementById("root"),
   );
 }
 

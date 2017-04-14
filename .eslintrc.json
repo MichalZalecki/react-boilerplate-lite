@@ -12,6 +12,7 @@
   },
   "rules": {
     "quotes": ["error", "double"],
-    "no-unused-vars": ["error", { "vars": "local", "args": "after-used", "argsIgnorePattern": "^_" }]
+    "no-unused-vars": ["error", { "vars": "local", "args": "after-used", "argsIgnorePattern": "^_" }],
+    "global-require": 0
   }
 }

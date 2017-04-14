@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-const config = {
+module.exports = {
   entry: [
     path.resolve("src/index.jsx"),
   ],
@@ -34,5 +34,3 @@ const config = {
     ],
   },
 };
-
-module.exports = config;

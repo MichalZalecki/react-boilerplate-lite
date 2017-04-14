@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import cls from "./App.css";
 
-class App extends React.Component {
+class App extends Component {
   state = {
     text: "Hello World!",
   };

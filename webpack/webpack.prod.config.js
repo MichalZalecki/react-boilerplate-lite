@@ -7,7 +7,7 @@ const extractText = (fallback, use) =>
 
 const CSS_LOADER_OPTIONS = "sourceMaps&minimize";
 
-const prodConfig = {
+module.exports = {
   devtool: "source-map",
 
   entry: config.entry,
@@ -29,5 +29,3 @@ const prodConfig = {
     ],
   },
 };
-
-module.exports = prodConfig;

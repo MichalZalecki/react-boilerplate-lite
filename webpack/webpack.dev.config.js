@@ -3,7 +3,7 @@ const config = require("./webpack.config");
 
 const CSS_LOADER_OPTIONS = "localIdentName=[local]--[hash:base64:5]";
 
-const devConfig = {
+module.exports = {
   devtool: "eval",
 
   entry: [
@@ -30,5 +30,3 @@ const devConfig = {
     ],
   },
 };
-
-module.exports = devConfig;
