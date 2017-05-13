@@ -18,8 +18,7 @@ npm install
 ## Usage
 
 ```
-npm start                   # start production server
-npm run start:dev           # start development server (webpack.dev.config.js)
-npm run start:dashboard     # start development server using webpack-dashboard
+npm start                   # start server
+npm run start:dashboard     # start server using webpack-dashboard
 npm run build               # production build (remember to build with NODE_ENV=production)
 ```
