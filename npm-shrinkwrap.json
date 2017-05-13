@@ -1517,12 +1517,12 @@
     },
     "eslint": {
       "version": "3.19.0",
-      "from": "eslint@>=3.18.0 <4.0.0",
+      "from": "eslint@>=3.15.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/eslint/-/eslint-3.19.0.tgz"
     },
     "eslint-config-airbnb": {
       "version": "14.1.0",
-      "from": "eslint-config-airbnb@>=14.1.0 <15.0.0",
+      "from": "eslint-config-airbnb@latest",
       "resolved": "https://registry.npmjs.org/eslint-config-airbnb/-/eslint-config-airbnb-14.1.0.tgz",
       "dev": true
     },
@@ -1624,13 +1624,13 @@
     },
     "eslint-plugin-jsx-a11y": {
       "version": "4.0.0",
-      "from": "eslint-plugin-jsx-a11y@>=4.0.0 <5.0.0",
+      "from": "eslint-plugin-jsx-a11y@>=3.0.2 <4.0.0||>=4.0.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-4.0.0.tgz",
       "dev": true
     },
     "eslint-plugin-react": {
       "version": "6.10.3",
-      "from": "eslint-plugin-react@>=6.10.3 <7.0.0",
+      "from": "eslint-plugin-react@>=6.9.0 <7.0.0",
       "resolved": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-6.10.3.tgz",
       "dev": true,
       "dependencies": {
