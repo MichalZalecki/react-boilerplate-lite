@@ -1,47 +1,25 @@
 # React Boilerlate Lite
 
-Minimal boilerplate for React apps. It's not going to force you to use any specific toolset/framework.
-*React Boilerlate Lite* is just a setup which allows you to develop and deploy without pain.
+[![bitHound](https://img.shields.io/bithound/dependencies/github/rexxars/sse-channel.svg?style=flat-square)](https://github.com/MichalZalecki/react-boilerplate-lite/)
+
+React Boilerlate Lite is a minimal boilerplate for modern React apps build on **webpack 2** with **hot reloading** support. It's not opinionated on any state management library or testing framework. Develop and deploy without pain using tools you want.
 
 Working with Heroku/Dokku out of the box.
 
 ## Installation
 
 ```
+git clone --depth 1 https://github.com/MichalZalecki/react-boilerplate-lite project
+cd project
 cp .env-example .env
 npm install
 ```
 
 ## Usage
 
-Start **express** (serving files in production).
-
-```bash
-npm start
 ```
-
-Start **express with webpack-dev-middleware** (in development).
-
-```bash
-npm run start:dev
-```
-
-Start **express with webpack-dev-middleware and webpack-dashboard** (for SWAG).
-
-```bash
-npm run start:dashboard
-```
-
-Build (also run in `postinstall`). Make sure you are creating React bundle in `production`
-environment.
-
-```bash
-NODE_ENV=production npm run build
-```
-
-You can specify `PORT` for both: development and production server (default to `8080`).
-
-```
-PORT=5000 npm start
-PORT=8081 npm run start:dev
+npm start                   # start production server
+npm run start:dev           # start development server (webpack.dev.config.js)
+npm run start:dashboard     # start development server using webpack-dashboard
+npm run build               # production build (remember to build with NODE_ENV=production)
 ```
