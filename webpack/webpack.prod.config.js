@@ -1,6 +1,8 @@
 const webpack = require("webpack");
-const config = require("./webpack.config");
+const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const config = require("./webpack.config");
 
 const extractText = (fallback, use) =>
   ExtractTextPlugin.extract({ fallback, use });
@@ -19,6 +21,10 @@ module.exports = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true, comments: false }),
     new ExtractTextPlugin({ filename: "styles.[hash].css", allChunks: true }),
+    new HTMLWebpackPlugin({
+      template: path.resolve("src/index.html"),
+      minify: { collapseWhitespace: true },
+    }),
     ...config.plugins,
   ],
 

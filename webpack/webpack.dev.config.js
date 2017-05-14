@@ -1,4 +1,6 @@
 const webpack = require("webpack");
+const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 const config = require("./webpack.config");
 
 const CSS_LOADER_OPTIONS = "localIdentName=[local]--[hash:base64:5]";
@@ -21,6 +23,10 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new HTMLWebpackPlugin({
+      template: path.resolve("src/index.html"),
+      minify: { collapseWhitespace: true },
+    }),
     ...config.plugins,
   ],
 
