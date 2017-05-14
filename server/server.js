@@ -7,7 +7,6 @@ const path = require("path");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const { StaticRouter } = require("react-router-dom");
-
 const logger = require("./middleware/logger");
 const { devMiddleware, hotMiddleware } = require("./middleware/webpack");
 
@@ -37,7 +36,7 @@ function getTemplate() {
 }
 
 function render(req, context) {
-  const App = require("../build/app.server").default;
+  const { default: App, Helmet } = require("../build/app.server");
 
   if (process.env.NODE_ENV !== "production") {
     delete require.cache[require.resolve("../build/app.server")];
@@ -48,8 +47,11 @@ function render(req, context) {
     React.createElement(StaticRouter, { location: req.url, context }, React.createElement(App))
   );
 
+  const helmet = Helmet.renderStatic();
+
   const html = template
-    .replace("<div id=\"root\"></div>", `<div id="root">${body}</div>`);
+    .replace("<div id=\"root\"></div>", `<div id="root">${body}</div>`)
+    .replace("</head>", `${helmet.title.toString()}</head>`);
 
   return html;
 }
