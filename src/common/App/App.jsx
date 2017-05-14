@@ -1,18 +1,19 @@
-import React, { Component } from "react";
-import cls from "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-class App extends Component {
-  state = {
-    text: "Hello World!",
-  };
+import Navigation from "../Navigation/Navigation";
+import Home from "../Home/Home";
+import Posts from "../../posts/Posts/Posts";
 
-  render() {
-    return (
-      <div>
-        <h1 className={cls.title}>{this.state.text}</h1>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Navigation />
+
+      <Route exact path="/" component={Home} />
+      <Route path="/posts" component={Posts} />
+    </div>
+  </Router>
+);
 
 export default App;
