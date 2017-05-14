@@ -31,8 +31,8 @@ app.get("*", (req, res) => {
   res.end();
 });
 
-const listener = app.listen(process.env.PORT || 8080, () => {
-  console.log("Express started at http://localhost:%d\n", listener.address().port);
+const server = app.listen(process.env.PORT || 8080, () => {
+  console.log("Express started at http://localhost:%d\n", server.address().port);
   if (process.env.NODE_ENV !== "production") {
     console.log("Waiting for webpack...\n");
   }
