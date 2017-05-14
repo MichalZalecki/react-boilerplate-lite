@@ -6,11 +6,13 @@ const CSS_LOADER_OPTIONS = "localIdentName=[local]--[hash:base64:5]";
 module.exports = {
   devtool: "eval", // use cheap-eval-source-map for slower builds but better debugging
 
-  entry: [
-    "react-hot-loader/patch",
-    "webpack-hot-middleware/client?reload=true",
-    ...config.entry,
-  ],
+  entry: {
+    app: [
+      "react-hot-loader/patch",
+      "webpack-hot-middleware/client?reload=true",
+      ...config.entry.app,
+    ],
+  },
 
   resolve: config.resolve,
 

@@ -5,13 +5,13 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: [
-    path.resolve("src/index.jsx"),
-  ],
+  entry: {
+    app: [path.resolve("src/index.jsx")],
+  },
 
   output: {
     path: path.resolve("build"),
-    filename: "app.[hash].js",
+    filename: "[name].[hash].js",
     chunkFilename: "[name].[chunkhash].js",
     publicPath: "/",
   },
