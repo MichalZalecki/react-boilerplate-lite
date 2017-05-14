@@ -2,13 +2,9 @@ require("dotenv").config({ silent: true });
 
 const express = require("express");
 const compression = require("compression");
-const fs = require("fs");
-const path = require("path");
-const React = require("react");
-const ReactDOMServer = require("react-dom/server");
-const { StaticRouter } = require("react-router-dom");
 const logger = require("./middleware/logger");
 const { devMiddleware, hotMiddleware } = require("./middleware/webpack");
+const render = require("./rendering/render");
 
 const app = express();
 
@@ -27,44 +23,19 @@ if (process.env.NODE_ENV === "production") {
   app.use(hotMiddleware);
 }
 
-function getTemplate() {
-  if (process.env.NODE_ENV === "production") {
-    return fs.readFileSync(path.resolve("build/index.html"), "utf8");
-  }
+const POSTS = [
+  { id: 1, title: "Post 1" },
+  { id: 2, title: "Post 2" },
+];
 
-  return devMiddleware.fileSystem.readFileSync(path.resolve("build/index.html"), "utf8");
-}
+app.get("/posts", (req, res) => {
+  const posts = { list: POSTS };
 
-function render(req, context) {
-  const { default: App, Helmet } = require("../build/app.server");
-
-  if (process.env.NODE_ENV !== "production") {
-    delete require.cache[require.resolve("../build/app.server")];
-  }
-
-  const template = getTemplate();
-  const body = ReactDOMServer.renderToString(
-    React.createElement(StaticRouter, { location: req.url, context }, React.createElement(App))
-  );
-
-  const helmet = Helmet.renderStatic();
-
-  const html = template
-    .replace("<div id=\"root\"></div>", `<div id="root">${body}</div>`)
-    .replace("</head>", `${helmet.title.toString()}</head>`);
-
-  return html;
-}
+  render(req, res, { posts });
+});
 
 app.get("*", (req, res) => {
-  const context = {};
-  const html = render(req, context);
-
-  if (context.url) {
-    res.redirect(context.status, context.url);
-  } else {
-    res.status(context.status || 200).send(html);
-  }
+  render(req, res, {});
 });
 
 const server = app.listen(process.env.PORT || 8080, () => {

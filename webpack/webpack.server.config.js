@@ -12,6 +12,7 @@ module.exports = {
 
   entry: {
     app: path.resolve("src/common/App/App"),
+    rootReducer: path.resolve("src/common/rootReducer"),
   },
 
   resolve: config.resolve,

@@ -45,8 +45,9 @@
     "react-dom": "^16.0.0",
     "react-helmet": "^5.0.3",
     "react-hot-loader": "^3.0.0-beta.7",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.6.0"
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
