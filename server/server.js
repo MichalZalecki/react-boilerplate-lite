@@ -58,7 +58,11 @@ app.get("*", (req, res) => {
   const context = {};
   const html = render(req, context);
 
-  res.send(html);
+  if (context.url) {
+    res.redirect(context.status, context.url);
+  } else {
+    res.status(context.status || 200).send(html);
+  }
 });
 
 const server = app.listen(process.env.PORT || 8080, () => {
