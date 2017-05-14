@@ -32,11 +32,17 @@ function getTemplate() {
   if (process.env.NODE_ENV === "production") {
     return fs.readFileSync(path.resolve("build/index.html"), "utf8");
   }
+
   return devMiddleware.fileSystem.readFileSync(path.resolve("build/index.html"), "utf8");
 }
 
 function render(req, context) {
   const App = require("../build/app.server").default;
+
+  if (process.env.NODE_ENV !== "production") {
+    delete require.cache[require.resolve("../build/app.server")];
+  }
+
   const template = getTemplate();
   const body = ReactDOMServer.renderToString(
     React.createElement(StaticRouter, { location: req.url, context }, React.createElement(App))
