@@ -1,6 +1,6 @@
 const express = require("express");
 const compression = require("compression");
-const path = require("path");
+const fs = require("fs");
 const logger = require("./middleware/logger");
 const { devMiddleware, hotMiddleware } = require("./middleware/webpack");
 
@@ -10,22 +10,23 @@ app.set("x-powered-by", false);
 
 app.use(compression());
 app.use(logger);
-app.use(express.static("build", {
-  // etag: false
-}));
 
-if (process.env.NODE_ENV === "" || process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("build", {
+    // etag: false
+  }));
+} else {
   app.use(devMiddleware);
   app.use(hotMiddleware);
 }
 
 app.get("*", (req, res) => {
   if (process.env.NODE_ENV === "production") {
-    res.sendFile(path.resolve("build/index.html"));
+    res.write(fs.readFileSync("build/index.html"));
   } else {
-    res.write(devMiddleware.fileSystem.readFileSync(path.resolve("build/index.html")));
-    res.end();
+    res.write(devMiddleware.fileSystem.readFileSync("build/index.html"));
   }
+  res.end();
 });
 
 const listener = app.listen(process.env.PORT || 8080, () => {
