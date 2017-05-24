@@ -22,6 +22,8 @@ module.exports = {
     libraryTarget: "commonjs",
   }),
 
+  externals: ["react-helmet"],
+
   plugins: [
     new ExtractTextPlugin({ filename: "styles.[hash].css", allChunks: true }),
     ...config.plugins,

@@ -25,5 +25,3 @@ const App = () => (
 );
 
 export default App;
-
-export Helmet from "react-helmet";

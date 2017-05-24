@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
+const Helmet = require("react-helmet").default;
 const { StaticRouter } = require("react-router-dom");
 const { createStore } = require("redux");
 const { Provider } = require("react-redux");
@@ -18,7 +19,7 @@ function getTemplate() {
 function render(req, res, preloadedState) {
   const context = {};
 
-  const { default: App, Helmet } = require("../../build/app.server");
+  const { default: App } = require("../../build/app.server");
   const { default: rootReducer } = require("../../build/rootReducer.server");
 
   if (process.env.NODE_ENV !== "production") {
