@@ -2,7 +2,6 @@ require("dotenv").config({ silent: true });
 
 const express = require("express");
 const compression = require("compression");
-const fs = require("fs");
 const path = require("path");
 const logger = require("./middleware/logger");
 const { devMiddleware, hotMiddleware } = require("./middleware/webpack");
@@ -15,9 +14,7 @@ app.use(compression());
 app.use(logger);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build", {
-    // etag: false
-  }));
+  app.use(express.static("build"));
 } else {
   app.use(devMiddleware);
   app.use(hotMiddleware);
@@ -25,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.get("*", (req, res) => {
   if (process.env.NODE_ENV === "production") {
-    res.write(fs.readFileSync(path.resolve("build/index.html")));
+    res.sendFile(path.join(__dirname + "/build/index.html"));
   } else {
     res.write(devMiddleware.fileSystem.readFileSync(path.resolve("build/index.html")));
   }
