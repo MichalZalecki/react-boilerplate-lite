@@ -44,8 +44,7 @@
     "react-dom": "^15.3.0",
     "react-hot-loader": "^3.0.0-beta.7",
     "style-loader": "^0.17.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "^2.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -57,7 +56,7 @@
     "eslint-plugin-react": "^6.10.3",
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-dev-server": "^2.3.0",
+    "webpack-dev-server": "^2.5.0",
     "webpack-hot-middleware": "^2.12.2"
   },
   "optionalDependencies": {
