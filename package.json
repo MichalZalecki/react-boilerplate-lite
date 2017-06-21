@@ -13,6 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Michał Załęcki <michal@michalzalecki.com>",
+  "engines": {
+    "node": "~8.1.2"
+  },
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.24.0",
