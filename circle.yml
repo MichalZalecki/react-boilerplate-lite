@@ -1,0 +1,11 @@
+machine:
+  node:
+    version: 8.1.2
+
+dependencies:
+  pre:
+    - cp example.env .env
+
+test:
+  override:
+    - npm run lint
