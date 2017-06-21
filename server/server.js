@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.get("*", (req, res) => {
   if (process.env.NODE_ENV === "production") {
-    res.sendFile(path.join(__dirname + "/build/index.html"));
+    res.sendFile(path.join(__dirname, "/build/index.html"));
   } else {
     res.write(devMiddleware.fileSystem.readFileSync(path.resolve("build/index.html")));
   }
