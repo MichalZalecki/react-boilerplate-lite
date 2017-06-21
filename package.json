@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node server/server.js",
-    "start:dashboard": "webpack-dashboard node server/dev-server",
+    "start:dashboard": "webpack-dashboard node server/server.js",
     "postinstall": "npm run build",
     "build": "webpack --config webpack/webpack.prod.config.js",
     "clean": "rm -rf build",
