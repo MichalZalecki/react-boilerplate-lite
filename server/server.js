@@ -25,8 +25,8 @@ app.get("*", (req, res) => {
     res.sendFile(path.resolve("build", "index.html"));
   } else {
     res.write(devMiddleware.fileSystem.readFileSync(path.resolve("build", "index.html")));
+    res.end();
   }
-  res.end();
 });
 
 const server = app.listen(process.env.PORT || 8080, () => {
