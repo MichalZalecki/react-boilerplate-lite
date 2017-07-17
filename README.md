@@ -7,6 +7,8 @@ React Boilerlate Lite is a minimal boilerplate for modern React apps build on **
 
 Working with Heroku/Dokku out of the box.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Installation
 
 ```
