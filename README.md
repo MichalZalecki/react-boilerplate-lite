@@ -12,7 +12,7 @@ Working with Heroku/Dokku out of the box.
 ## Installation
 
 ```
-git clone --depth 1 https://github.com/MichalZalecki/react-boilerplate-lite project
+git clone -b react-fiber --depth 1 https://github.com/MichalZalecki/react-boilerplate-lite project
 cd project
 cp .env-example .env
 npm install
