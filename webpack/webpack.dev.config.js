@@ -3,7 +3,7 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const config = require("./webpack.config");
 
-const CSS_LOADER_OPTIONS = "localIdentName=[local]--[hash:base64:5]";
+const CSS_LOADER_OPTIONS = "localIdentName=[name]--[hash:base64:5]";
 
 module.exports = {
   devtool: "eval", // use cheap-eval-source-map for slower builds but better debugging

@@ -7,7 +7,7 @@ const config = require("./webpack.config");
 const extractText = (fallback, use) =>
   ExtractTextPlugin.extract({ fallback, use });
 
-const CSS_LOADER_OPTIONS = "sourceMaps&minimize";
+const CSS_LOADER_OPTIONS = "sourceMaps&minimize&localIdentName=[name]--[hash:base64:5]";
 
 module.exports = {
   devtool: "source-map",
@@ -19,7 +19,7 @@ module.exports = {
   output: config.output,
 
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true, comments: false }),
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, output: { comments: false } }),
     new ExtractTextPlugin({ filename: "styles.[hash].css", allChunks: true }),
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
