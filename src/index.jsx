@@ -11,7 +11,7 @@ import rootReducer from "./common/rootReducer";
 const store = createStore(rootReducer, window.__PRELOADED_STATE__);
 
 function render(Root) {
-  ReactDOM.render(
+  ReactDOM.hydrate(
     <AppContainer>
       <Provider store={store}>
         <BrowserRouter>
