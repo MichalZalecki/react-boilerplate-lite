@@ -30,4 +30,3 @@ npm run build               # production build (remember to build with NODE_ENV=
 
 * [What's the best React boilderplate and why you cannot clone it from GitHub?](https://michalzalecki.com/the-best-react-boilerplate/)
 * [Try with TypeScript](https://github.com/MichalZalecki/react-boilerplate-lite/tree/typescript)
-* [Try with React Fiber](https://github.com/MichalZalecki/react-boilerplate-lite/tree/react-fiber)
