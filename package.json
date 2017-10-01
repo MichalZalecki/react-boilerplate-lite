@@ -54,7 +54,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
-    "webpack-dashboard": "^0.4.0",
+    "webpack-dashboard": "^1.0.0-5",
     "webpack-dev-middleware": "^1.11.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-hot-middleware": "^2.19.1"
