@@ -7,6 +7,8 @@ import Posts from "../../posts/Posts/Posts";
 import NotFound from "../NotFound/NotFound";
 import RedirectWithStatus from "../RedirectWithStatus/RedirectWithStatus";
 
+export Head from "../Head/Head";
+
 const App = () => (
   <div>
     <Navigation />

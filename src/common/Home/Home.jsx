@@ -1,11 +1,11 @@
 import React from "react";
-import Helmet from "react-helmet";
+import Head from "../Head/Head";
 
 const Home = () => (
   <div>
-    <Helmet>
+    <Head>
       <title>Home</title>
-    </Helmet>
+    </Head>
     <h1>Home</h1>
   </div>
 );

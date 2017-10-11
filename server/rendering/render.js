@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
-const Helmet = require("react-helmet").default;
+// const Helmet = require("react-helmet").default;
 const { StaticRouter } = require("react-router-dom");
 const { createStore } = require("redux");
 const { Provider } = require("react-redux");
@@ -19,7 +19,7 @@ function getTemplate() {
 function render(req, res, preloadedState) {
   const context = {};
 
-  const { default: App } = require("../../build/app.server");
+  const { default: App, Head } = require("../../build/app.server");
   const { default: rootReducer } = require("../../build/rootReducer.server");
 
   if (process.env.NODE_ENV !== "production") {
@@ -39,11 +39,10 @@ function render(req, res, preloadedState) {
     )
   );
 
-  const helmet = Helmet.renderStatic();
-
   const html = template
     .replace("<div id=\"root\"></div>", `<div id="root">${body}</div>`)
-    .replace("</head>", `${helmet.title.toString()}</head>`)
+    // .replace("</head>", `${helmet.title.toString()}</head>`)
+    .replace("</head>", `${Head.toStaticMarkup()}</head>`)
     .replace("</head>", `<script>window.__PRELOADED_STATE__=${JSON.stringify(preloadedState)};</script></head>`);
 
   if (context.url) {
