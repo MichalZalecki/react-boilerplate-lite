@@ -28,6 +28,6 @@ npm run build               # production build (remember to build with NODE_ENV=
 
 ## Extras
 
-* [What's the best React boilderplate and why you cannot clone it from GitHub?](https://michalzalecki.com/the-best-react-boilerplate/)
+* [The Best React Boilerplate - _and why you cannot clone it from GitHub_](https://michalzalecki.com/the-best-react-boilerplate/)
 * [Try with TypeScript](https://github.com/MichalZalecki/react-boilerplate-lite/tree/typescript)
 * [Try with React Fiber](https://github.com/MichalZalecki/react-boilerplate-lite/tree/react-fiber)
