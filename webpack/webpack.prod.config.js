@@ -18,8 +18,10 @@ module.exports = {
 
   output: config.output,
 
+  mode: "production",
+
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, output: { comments: false } }),
+    // new webpack.optimize.UglifyJsPlugin({ sourceMap: true, output: { comments: false } }),
     new ExtractTextPlugin({ filename: "styles.[hash].css", allChunks: true }),
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),

@@ -6,7 +6,7 @@ const config = require("./webpack.config");
 const CSS_LOADER_OPTIONS = "localIdentName=[name]--[hash:base64:5]";
 
 module.exports = {
-  devtool: "eval", // use cheap-eval-source-map for slower builds but better debugging
+  // devtool: "eval", // use cheap-eval-source-map for slower builds but better debugging
 
   entry: {
     app: [
@@ -20,9 +20,11 @@ module.exports = {
 
   output: config.output,
 
+  mode: "development",
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
+    // new webpack.NoEmitOnErrorsPlugin(),
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
       minify: { collapseWhitespace: true },

@@ -20,8 +20,8 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.EnvironmentPlugin(["NODE_ENV"]),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    // new webpack.EnvironmentPlugin(["NODE_ENV"]),
+    // new webpack.optimize.ModuleConcatenationPlugin(),
   ],
 
   module: {
