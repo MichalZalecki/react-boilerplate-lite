@@ -26,7 +26,12 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, use: "babel-loader" },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: { cacheDirectory: process.env.NODE_ENV === "development" },
+      },
     ],
   },
 };

@@ -13,6 +13,7 @@ if (process.env.NODE_ENV === "production") {
 
   const compiler = webpack(config);
 
+  compiler.apply(new webpack.ProgressPlugin());
   compiler.apply(new DashboardPlugin());
 
   const devMiddleware = webpackDevMiddleware(compiler, {

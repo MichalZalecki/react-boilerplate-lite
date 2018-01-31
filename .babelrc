@@ -2,7 +2,7 @@
   "presets": [["es2015", { "modules": false }], "stage-0", "react"],
   "env": {
     "development": {
-      "plugins": ["transform-react-jsx-source"]
+      "plugins": ["transform-react-jsx-source", "react-hot-loader/babel"]
     }
   }
 }

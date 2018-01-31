@@ -30,8 +30,8 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.css$/, use: extractText("style-loader", `css-loader?${CSS_LOADER_OPTIONS}!postcss-loader`) },
       ...config.module.rules,
+      { test: /\.css$/, loader: extractText("style-loader", `css-loader?${CSS_LOADER_OPTIONS}!postcss-loader`) },
     ],
   },
 };
