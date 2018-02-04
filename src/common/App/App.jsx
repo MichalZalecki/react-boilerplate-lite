@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import { hot } from "react-hot-loader";
+import React, { Component } from "react";
 
 import cls from "./App.css";
 
