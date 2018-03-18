@@ -1,15 +1,10 @@
-const webpack = require("webpack");
-const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
 const config = require("./webpack.config");
-
-const extractText = (fallback, use) =>
-  ExtractTextPlugin.extract({ fallback, use });
 
 const CSS_LOADER_OPTIONS = "sourceMaps&minimize&localIdentName=[name]--[hash:base64:5]";
 
 module.exports = {
+  mode: "production",
+
   devtool: "source-map",
 
   entry: config.entry,
@@ -18,20 +13,16 @@ module.exports = {
 
   output: config.output,
 
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, output: { comments: false } }),
-    new ExtractTextPlugin({ filename: "styles.[hash].css", allChunks: true }),
-    new HTMLWebpackPlugin({
-      template: path.resolve("src/index.html"),
-      minify: { collapseWhitespace: true },
-    }),
-    ...config.plugins,
-  ],
+  optimization: {
+    minimize: true,
+  },
+
+  plugins: config.plugins,
 
   module: {
     rules: [
       ...config.module.rules,
-      { test: /\.css$/, loader: extractText("style-loader", `css-loader?${CSS_LOADER_OPTIONS}!postcss-loader`) },
+      { test: /\.css$/, loader: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`, "postcss-loader"] },
     ],
   },
 };
