@@ -1,6 +1,6 @@
 require("dotenv").config({ silent: true });
 
-const webpack = require("webpack");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -20,8 +20,9 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.EnvironmentPlugin(["NODE_ENV"]),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    new HTMLWebpackPlugin({
+      template: path.resolve("src/index.html"),
+    }),
   ],
 
   module: {
