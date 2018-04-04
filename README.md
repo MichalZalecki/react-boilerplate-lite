@@ -23,6 +23,7 @@ npm install
 npm start                   # start server
 npm run start:dashboard     # start server using webpack-dashboard
 npm run build               # production build (remember to build with NODE_ENV=production)
+npm run lint                # ESLint (customized Airbnb JavaScript Style Guide)
 ```
 
 ## Extras
