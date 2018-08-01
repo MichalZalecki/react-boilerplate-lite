@@ -3,15 +3,27 @@ import React, { Component } from "react";
 
 import cls from "./App.css";
 
-class App extends Component {
+
+export class App extends Component {
   state = {
-    text: "Hello World!",
+    text: "Hello, World!",
+  };
+
+  bang = () => {
+    this.setState(({ text }) => ({ text: `${text}!` }));
   };
 
   render() {
+    const { text } = this.state;
+
     return (
       <div>
-        <h1 className={cls.title}>{this.state.text}</h1>
+        <h1 className={cls.title}>
+          {text}
+        </h1>
+        <button onClick={this.bang} id="bang" type="button">
+          Bang!
+        </button>
       </div>
     );
   }

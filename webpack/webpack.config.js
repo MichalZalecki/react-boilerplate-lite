@@ -2,6 +2,7 @@ require("dotenv").config({ silent: true });
 
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -20,6 +21,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.EnvironmentPlugin(["NODE_ENV"]),
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
     }),
@@ -31,7 +33,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
-        options: { cacheDirectory: process.env.NODE_ENV === "development" },
+        options: { cacheDirectory: process.env.NODE_ENV === "development" }, // TODO: Check for problems during dev setup
       },
     ],
   },

@@ -8,12 +8,14 @@
     },
     "env": {
       "browser": true,
-      "node": true
+      "node": true,
+      "jest": true
     },
     "rules": {
       "quotes": ["error", "double"],
       "no-unused-vars": ["error", { "vars": "local", "args": "after-used", "argsIgnorePattern": "^_" }],
       "no-confusing-arrow": 0,
-      "global-require": 0
+      "global-require": 0,
+      "import/no-named-as-default": 0
     }
 }

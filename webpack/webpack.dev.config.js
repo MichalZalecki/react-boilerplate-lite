@@ -6,7 +6,7 @@ const CSS_LOADER_OPTIONS = "sourceMaps&localIdentName=[name]--[hash:base64:5]";
 module.exports = {
   mode: "development",
 
-  devtool: "eval", // use cheap-eval-source-map for slower builds but better debugging
+  devtool: "cheap-module-eval-source-map", // use eval for faster builds/poor debugging
 
   entry: {
     app: [
