@@ -29,7 +29,7 @@ module.exports = {
   module: {
     rules: [
       ...config.module.rules,
-      { test: /\.css$/, loader: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`, "postcss-loader"] },
+      { test: /\.css$/, loader: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`] },
     ],
   },
 };
