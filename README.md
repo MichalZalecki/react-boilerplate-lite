@@ -1,6 +1,6 @@
 # React Boilerlate Lite
 
-[![CircleCI](https://img.shields.io/circleci/project/github/MichalZalecki/react-boilerplate-lite/master.svg)]()
+[![CircleCI](https://circleci.com/gh/MichalZalecki/react-boilerplate-lite.svg?style=svg)](https://circleci.com/gh/MichalZalecki/react-boilerplate-lite)
 
 React Boilerlate Lite is a minimal boilerplate for modern React apps build on **webpack 4** with **hot reloading** support.
 
