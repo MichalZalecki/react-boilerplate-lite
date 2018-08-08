@@ -4,6 +4,8 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
+const CSS_LOADER_OPTIONS = "sourceMap&localIdentName=[name]--[hash:base64:5]";
+
 module.exports = {
   entry: {
     app: [path.resolve("src/index.jsx")],
@@ -33,8 +35,9 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
-        options: { cacheDirectory: process.env.NODE_ENV === "development" }, // TODO: Check for problems during dev setup
+        options: { cacheDirectory: process.env.NODE_ENV === "development" },
       },
+      { test: /\.css$/, loader: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`] },
     ],
   },
 };

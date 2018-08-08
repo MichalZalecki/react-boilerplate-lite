@@ -1,7 +1,5 @@
 const config = require("./webpack.config");
 
-const CSS_LOADER_OPTIONS = "sourceMap&localIdentName=[name]--[hash:base64:5]";
-
 module.exports = {
   mode: "production",
 
@@ -22,7 +20,6 @@ module.exports = {
   module: {
     rules: [
       ...config.module.rules,
-      { test: /\.css$/, loader: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`] },
     ],
   },
 };

@@ -1,8 +1,6 @@
 const webpack = require("webpack");
 const config = require("./webpack.config");
 
-const CSS_LOADER_OPTIONS = "sourceMaps&localIdentName=[name]--[hash:base64:5]";
-
 module.exports = {
   mode: "development",
 
@@ -29,7 +27,6 @@ module.exports = {
   module: {
     rules: [
       ...config.module.rules,
-      { test: /\.css$/, loader: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`] },
     ],
   },
 };
