@@ -18,13 +18,9 @@
   "author": "Michał Załęcki <michal@michalzalecki.com>",
   "license": "MIT",
   "jest": {
-    "testEnvironment": "node",
     "moduleNameMapper": {
       "\\.css$": "identity-obj-proxy"
-    },
-    "setupFiles": [
-      "<rootDir>/test/setup.js"
-    ]
+    }
   },
   "dependencies": {
     "@babel/core": "^7.4.3",
@@ -51,8 +47,6 @@
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-webpack": "^0.11.0",
@@ -60,6 +54,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.7.1",
+    "react-testing-library": "^6.0.4",
     "webpack-dashboard": "^3.0.2",
     "webpack-dev-middleware": "^3.6.2",
     "webpack-dev-server": "^3.2.1",

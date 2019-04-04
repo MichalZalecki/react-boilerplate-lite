@@ -3,12 +3,12 @@ import React, { useState } from "react";
 
 import cls from "./App.css";
 
-function App() {
+export function App() {
   const [text, setText] = useState("Hello, World!");
 
   return (
     <div>
-      <h1 className={cls.title}>
+      <h1 className={cls.title} data-testid="title">
         {text}
       </h1>
       <button onClick={() => setText(`${text}!`)} id="bang" type="button">
