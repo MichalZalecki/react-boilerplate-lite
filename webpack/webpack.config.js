@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
-const CSS_LOADER_OPTIONS = "sourceMap&localIdentName=[name]--[hash:base64:5]";
+const CSS_LOADER_OPTIONS = "sourceMap&modules=global&localIdentName=[name]--[hash:base64:5]";
 
 module.exports = {
   entry: {

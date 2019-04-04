@@ -8,7 +8,6 @@ module.exports = {
 
   entry: {
     app: [
-      "react-hot-loader/patch",
       "webpack-hot-middleware/client?reload=true",
       ...config.entry.app,
     ],
@@ -27,6 +26,11 @@ module.exports = {
   module: {
     rules: [
       ...config.module.rules,
+      {
+        test: /\.jsx?$/,
+        include: /node_modules/,
+        use: ["react-hot-loader/webpack"],
+      },
     ],
   },
 };

@@ -1,32 +1,21 @@
-import { hot } from "react-hot-loader";
-import React, { Component } from "react";
+import { hot } from "react-hot-loader/root";
+import React, { useState } from "react";
 
 import cls from "./App.css";
 
+function App() {
+  const [text, setText] = useState("Hello, World!");
 
-export class App extends Component {
-  state = {
-    text: "Hello, World!",
-  };
-
-  bang = () => {
-    this.setState(({ text }) => ({ text: `${text}!` }));
-  };
-
-  render() {
-    const { text } = this.state;
-
-    return (
-      <div>
-        <h1 className={cls.title}>
-          {text}
-        </h1>
-        <button onClick={this.bang} id="bang" type="button">
-          Bang!
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1 className={cls.title}>
+        {text}
+      </h1>
+      <button onClick={() => setText(`${text}!`)} id="bang" type="button">
+        Bang!
+      </button>
+    </div>
+  );
 }
 
-export default hot(module)(App);
+export default hot(App);
