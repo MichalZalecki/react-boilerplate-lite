@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/MichalZalecki/react-boilerplate-lite.svg?style=svg)](https://circleci.com/gh/MichalZalecki/react-boilerplate-lite)
 
-Using **TypeScript**? Checkout the [typescript](https://github.com/MichalZalecki/react-boilerplate-lite/tree/typescript) branch!
+💙 Using **TypeScript**? Checkout the [typescript](https://github.com/MichalZalecki/react-boilerplate-lite/tree/typescript) branch! 💙
 
 **Read more:** [What's the best React boilderplate and why you cannot clone it from GitHub?](https://michalzalecki.com/the-best-react-boilerplate/)
 
