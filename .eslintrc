@@ -1,7 +1,6 @@
 {
     "extends": [
       "airbnb",
-      "prettier/@typescript-eslint",
       "plugin:prettier/recommended"
     ],
     "parser": "babel-eslint",
