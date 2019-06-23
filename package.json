@@ -12,9 +12,9 @@
     "postinstall": "npm run build",
     "build": "webpack --config webpack/webpack.prod.config.js",
     "clean": "rm -rf build",
-    "lint": "eslint src --ext .js,.jsx",
-    "format:check": "prettier --check {src,webpack}/**/*.{js,jsx,json,css,html}",
-    "format": "prettier --write {src,webpack}/**/*.{js,jsx,json,css,html}",
+    "lint": "eslint {server,src,webpack} --ext .js,.jsx",
+    "format:check": "prettier --check {server,src,webpack}/**/*.{js,jsx,json,css,html}",
+    "format": "prettier --write {server,src,webpack}/**/*.{js,jsx,json,css,html}",
     "test": "jest"
   },
   "author": "Michał Załęcki <michal@michalzalecki.com>",
