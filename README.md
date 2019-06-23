@@ -24,6 +24,7 @@ npm start                   # start server
 npm run start:dashboard     # start server using webpack-dashboard
 npm run build               # production build (remember to build with NODE_ENV=production)
 npm run lint                # run ESLint (Airbnb Style Guide)
+npm run format              # run prettier
 npm run test                # run Jest
 ```
 

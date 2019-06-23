@@ -7,10 +7,7 @@ module.exports = {
   devtool: "cheap-module-eval-source-map", // use eval for faster builds/poor debugging
 
   entry: {
-    app: [
-      "webpack-hot-middleware/client?reload=true",
-      ...config.entry.app,
-    ],
+    app: ["webpack-hot-middleware/client?reload=true", ...config.entry.app],
   },
 
   resolve: config.resolve,

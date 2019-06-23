@@ -1,7 +1,6 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent } from "@testing-library/react";
 import { App } from "./App";
-
 
 describe("App", () => {
   it("adds bang after making a bang", () => {

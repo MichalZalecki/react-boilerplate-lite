@@ -18,8 +18,6 @@ module.exports = {
   plugins: config.plugins,
 
   module: {
-    rules: [
-      ...config.module.rules,
-    ],
+    rules: [...config.module.rules],
   },
 };
