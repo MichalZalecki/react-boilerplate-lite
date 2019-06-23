@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "Minimal boilerplate for React apps",
   "engines": {
-    "node": "^10.15.0",
-    "npm": "^6.6.0"
+    "node": "^10.15.3",
+    "npm": "^6.7.0"
   },
   "scripts": {
     "start": "node server/server.js",
