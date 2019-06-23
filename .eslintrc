@@ -15,9 +15,7 @@
       "jest": true
     },
     "rules": {
-      "global-require": "off",
       "import/prefer-default-export": "off",
-      "import/no-named-as-default": "off",
-      "import/no-extraneous-dependencies": "off"
+      "import/no-named-as-default": "off"
     }
 }
