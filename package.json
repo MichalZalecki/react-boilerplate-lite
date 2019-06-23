@@ -13,6 +13,7 @@
     "build": "webpack --config webpack/webpack.prod.config.js",
     "clean": "rm -rf build",
     "lint": "eslint src --ext .js,.jsx",
+    "format:check": "prettier --check {src,webpack}/**/*.{js,jsx,json,css,html}",
     "format": "prettier --write {src,webpack}/**/*.{js,jsx,json,css,html}",
     "test": "jest"
   },
