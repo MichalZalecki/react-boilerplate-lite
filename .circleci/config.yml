@@ -27,3 +27,7 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
+
+      - run:
+          name: Run codechecks
+          command: npx codechecks
