@@ -5,3 +5,7 @@ checks:
       files:
         - path: "./build/*.js"
         - path: "./build/*.html"
+
+  - name: lighthouse-keeper
+    options:
+      buildPath: ./build
