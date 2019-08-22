@@ -1,7 +1,5 @@
 env:
-  LEVEL: "pipeline"
+  EMOJI: "🦙"
 
 steps:
-  command: "echo $LEVEL"
-  env:
-    LEVEL: "step"
+  - command: echo "$BUILDKITE_ORGANIZATION_SLUG <3 $EMOJI"
