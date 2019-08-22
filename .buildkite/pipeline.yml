@@ -2,6 +2,7 @@ env:
   LEVEL: "pipeline"
 
 steps:
+  - label: "Test label"
   command: "echo $LEVEL"
   env:
     LEVEL: "step"
