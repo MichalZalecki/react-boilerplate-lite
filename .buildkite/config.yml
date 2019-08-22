@@ -1,0 +1,7 @@
+env:
+  LEVEL: "pipeline"
+
+steps:
+  command: "echo $LEVEL"
+  env:
+    LEVEL: "step"
