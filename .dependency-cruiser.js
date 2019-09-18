@@ -14,7 +14,7 @@ module.exports = {
         },
         {
             name: 'no-orphans',
-            severity: 'info',
+            severity: 'warn',
             comment:
                 "This is an orphan module - it's likely not used (anymore?). Either use it or remove it. If it's " +
                 "logical this module is an orphan (i.e. it's a config file), add an exception for it in your " +
@@ -95,7 +95,7 @@ module.exports = {
         /* rules you might want to tweak for your specific situation: */
         {
             name: 'not-to-test',
-            comment: 
+            comment:
                 "This module depends on code within a folder that should only contain tests. As tests don't " +
                 "implement functionality this is odd. Either you're writing a test outside the test folder " +
                 "or there's something in the test folder that isn't a test.",
@@ -141,7 +141,7 @@ module.exports = {
         {
             name: 'optional-deps-used',
             severity: 'info',
-            comment: 
+            comment:
                 "This module depends on an npm package that is declared as an optional dependency " +
                 "in your package.json. As this makes sense in limited situations only, it's flagged here. " +
                 "If you're using an optional dependency here by design - add an exception to your" +
@@ -155,7 +155,7 @@ module.exports = {
         },
         {
             name: 'peer-deps-used',
-            comment: 
+            comment:
                 "This module depends on an npm package that is declared as a peer dependency " +
                 "in your package.json. This makes sense if your package is e.g. a plugin, but in " +
                 "other cases - maybe not so much. If the use of a peer dependency is intentional " +
@@ -188,7 +188,7 @@ module.exports = {
             ]
         }
 
-        /* conditions specifying which dependencies to exclude 
+        /* conditions specifying which dependencies to exclude
            - path: a regular expression to match
            - dynamic: a boolean indicating whether to ignore dynamic (true) or static (false) dependencies.
                     leave out if you want to exclude neither (recommended!)
@@ -198,7 +198,7 @@ module.exports = {
         //   , dynamic: true
         // }
 
-        /* pattern specifying which files to include (regular expression) 
+        /* pattern specifying which files to include (regular expression)
            dependency-cruiser will skip everything not matching this pattern
         */
         // , includeOnly : ''
