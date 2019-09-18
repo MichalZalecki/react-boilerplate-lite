@@ -1,11 +1,21 @@
 checks:
-  - name: build-size-watcher
-    options:
-      gzip: false
-      files:
-        - path: "./build/*.js"
-        - path: "./build/*.html"
+  # - name: codechecks-git-no-uncommitted
 
-  - name: lighthouse-keeper
+  - name: codechecks-dependency-cruiser
     options:
-      buildPath: ./build
+      graph: true
+      exclude: node_modules
+      paths:
+        - src
+
+  # - name: build-size-watcher
+  #   options:
+  #     gzip: false
+  #     files:
+  #       - path: "./build/*.js"
+  #         # maxSize: 800KB
+  #       - path: "./build/*.html"
+
+  # - name: lighthouse-keeper
+  #   options:
+  #     buildPath: ./build
