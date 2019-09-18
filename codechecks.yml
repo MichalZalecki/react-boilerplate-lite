@@ -5,7 +5,6 @@ checks:
     options:
       config: .dependency-cruiser.js
       graph: true
-      exclude: node_modules
       paths:
         - src
 
