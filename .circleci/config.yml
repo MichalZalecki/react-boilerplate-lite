@@ -7,12 +7,12 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
 
-      - run: npm install
+      - run: yarn
 
       - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
 
@@ -24,6 +24,26 @@ jobs:
           name: Format check
           command: npm run format:check
 
+      # - run:
+      #     name: Run tests
+      #     command: npm run test
+
       - run:
-          name: Run tests
-          command: npm run test
+          name: Setup Chrome
+          command: |
+            wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - \
+            && sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+            && sudo apt-get update \
+            && sudo apt-get install -y google-chrome-unstable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst ttf-freefont \
+              --no-install-recommends \
+            && sudo rm -rf /var/lib/apt/lists/*
+
+      - run:
+          name: Setup GraphViz
+          command: |
+            sudo apt-get update \
+            && sudo apt-get install -y graphviz
+
+      - run:
+          name: Run codechecks
+          command: DEBUG=codechecks:* npx codechecks

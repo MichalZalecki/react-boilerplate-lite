@@ -1,6 +1,0 @@
-{
-  "name": "React Boilerlate Lite",
-  "buildpacks": [
-    { "url": "heroku/nodejs" }
-  ]
-}

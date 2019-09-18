@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Minimal boilerplate for React apps",
   "engines": {
-    "node": "^10.15.3",
+    "node": "^10.15.0",
     "npm": "^6.7.0"
   },
   "scripts": {
@@ -31,8 +31,11 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "codechecks-dependency-cruiser": "^0.0.1-beta.5",
+    "codechecks-git-no-uncommitted": "^0.0.1",
     "compression": "^1.7.4",
     "css-loader": "^3.0.0",
+    "dependency-cruiser": "^5.1.1",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^3.2.0",
@@ -47,6 +50,9 @@
     "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
+    "@codechecks/build-size-watcher": "^0.1.0",
+    "@codechecks/client": "^0.1.6",
+    "@codechecks/lighthouse-keeper": "^0.0.3",
     "@testing-library/react": "^8.0.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
