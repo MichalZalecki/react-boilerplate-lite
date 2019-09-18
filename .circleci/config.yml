@@ -24,9 +24,9 @@ jobs:
           name: Format check
           command: npm run format:check
 
-      - run:
-          name: Run tests
-          command: npm run test
+      # - run:
+      #     name: Run tests
+      #     command: npm run test
 
       - run:
           name: Setup Chrome
