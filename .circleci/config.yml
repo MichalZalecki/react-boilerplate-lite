@@ -46,4 +46,4 @@ jobs:
 
       - run:
           name: Run codechecks
-          command: npx codechecks
+          command: DEBUG=codechecks:* npx codechecks
