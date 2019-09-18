@@ -32,6 +32,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "codechecks-dependency-cruiser": "^0.0.1-beta.2",
+    "codechecks-git-no-uncommitted": "^0.0.1",
     "compression": "^1.7.4",
     "css-loader": "^3.0.0",
     "dependency-cruiser": "^5.1.1",

@@ -1,8 +1,9 @@
 checks:
-  # - name: codechecks-git-no-uncommitted
+  - name: codechecks-git-no-uncommitted
 
   - name: codechecks-dependency-cruiser
     options:
+      config: .dependency-cruiser.js
       graph: true
       exclude: node_modules
       paths:
