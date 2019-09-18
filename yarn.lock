@@ -2297,10 +2297,10 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codechecks-dependency-cruiser@^0.0.1-beta.2:
-  version "0.0.1-beta.2"
-  resolved "https://registry.yarnpkg.com/codechecks-dependency-cruiser/-/codechecks-dependency-cruiser-0.0.1-beta.2.tgz#02f3f212347ada0e3344300aee4f6525ebab05a3"
-  integrity sha512-lvJX47lt8IpVumIK02p8GWPxZKwIAD9is9FS1xOPAy7ei5uNHP8ADcL7zwqyez5xyGie3Y/5Y7I6VgITBuIAwg==
+codechecks-dependency-cruiser@^0.0.1-beta.3:
+  version "0.0.1-beta.3"
+  resolved "https://registry.yarnpkg.com/codechecks-dependency-cruiser/-/codechecks-dependency-cruiser-0.0.1-beta.3.tgz#95ecbf9677915f445a6a1af20681655b972160c2"
+  integrity sha512-Jzwra0ntTI5MJaQ0lbfhWzA1d0nkM7TRY5gyXAHttj9SA2rwbk+t3suQTJAupAf6/7eun001IpTK7g0y1Gpnaw==
   dependencies:
     dependency-cruiser "^5.1.1"
 
