@@ -1,6 +1,7 @@
 {
     "extends": [
-      "airbnb",
+      "eslint:recommended",
+      "plugin:react/recommended",
       "plugin:prettier/recommended"
     ],
     "plugins": [
@@ -8,6 +9,9 @@
     ],
     "parser": "babel-eslint",
     "settings": {
+      "react": {
+        "version": "detect"
+      },
       "import/resolver": {
         "webpack": { "config": "./webpack/webpack.prod.config.js" }
       }
