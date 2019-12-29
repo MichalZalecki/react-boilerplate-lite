@@ -2,15 +2,11 @@
   "name": "react-boilerplate-lite",
   "version": "0.0.0",
   "description": "Minimal boilerplate for React apps",
-  "engines": {
-    "node": "^10.15.3",
-    "npm": "^6.7.0"
-  },
   "scripts": {
     "start": "node server/server.js",
     "start:dashboard": "webpack-dashboard node server/server.js",
     "postinstall": "npm run build",
-    "build": "webpack --config webpack/webpack.prod.config.js",
+    "build": "NODE_ENV=production webpack --config webpack/webpack.prod.config.js",
     "clean": "rm -rf build",
     "lint": "eslint src --ext .js,.jsx",
     "format:check": "prettier --check {server,src,webpack}/**/*.{js,jsx,json,css,html}",
@@ -42,12 +38,12 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.12.8",
-    "style-loader": "^0.23.1",
+    "style-loader": "^1.1.2",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
-    "@testing-library/react": "^8.0.5",
+    "@testing-library/react": "^9.4.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.0.1",
