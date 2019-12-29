@@ -4,6 +4,11 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
+function localIdentName() {
+  if (process.env.NODE_ENV === "production") return "[hash:base64]";
+  return "[path][name]__[local]";
+}
+
 module.exports = {
   entry: {
     app: [path.resolve("src/index.jsx")],
@@ -46,7 +51,7 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: {
-                localIdentName: "[name]--[hash:base64:5]",
+                localIdentName: localIdentName(),
               },
             },
           },
