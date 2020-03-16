@@ -19,7 +19,7 @@ React Boilerlate Lite is a minimal boilerplate for modern React apps build on **
     docker build -t react-boilerlate-lite .
     docker run --rm -it -p 8080:8080 react-boilerlate-lite
 
-or
+### Docker Compose
 
     docker-compose up
 
