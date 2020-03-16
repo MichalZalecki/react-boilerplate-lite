@@ -37,7 +37,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.8",
+    "react-hot-loader": "^4.12.20",
     "style-loader": "^1.1.2",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
@@ -54,7 +54,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "jest": "^24.8.0",
+    "jest": "^25.1.0",
     "prettier": "^1.18.2",
     "webpack-dashboard": "^3.0.7",
     "webpack-dev-middleware": "^3.7.0",
