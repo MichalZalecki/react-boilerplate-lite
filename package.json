@@ -17,7 +17,11 @@
   "jest": {
     "moduleNameMapper": {
       "\\.css$": "identity-obj-proxy"
-    }
+    },
+    "moduleDirectories": [
+      "./src",
+      "node_modules"
+    ]
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
