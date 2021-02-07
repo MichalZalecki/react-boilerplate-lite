@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const config = require("./webpack.config");
 
 module.exports = {
@@ -6,17 +5,12 @@ module.exports = {
 
   mode: "development",
 
-  devtool: "eval-cheap-module-source-map", // use eval for faster builds/poor debugging
+  devtool: "eval-cheap-module-source-map", // use "eval" for faster builds and inferior debugging
 
-  entry: {
-    app: ["webpack-hot-middleware/client", ...config.entry.app],
+  devServer: {
+    hot: true,
+    overlay: true,
   },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    ...config.plugins,
-  ],
 
   module: {
     rules: [

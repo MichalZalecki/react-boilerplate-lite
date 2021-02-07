@@ -4,6 +4,7 @@
   "description": "Minimal boilerplate for React apps",
   "scripts": {
     "start": "node server/server.js",
+    "dev": "webpack serve --config webpack/webpack.dev.config.js",
     "start:dashboard": "webpack-dashboard node server/server.js",
     "build": "NODE_ENV=production webpack --config webpack/webpack.prod.config.js",
     "clean": "rm -rf build",
@@ -39,7 +40,8 @@
     "react-hot-loader": "^4.12.20",
     "style-loader": "^1.1.2",
     "terser-webpack-plugin": "^5.1.1",
-    "webpack": "^5.21.1"
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0"
   },
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
@@ -56,7 +58,6 @@
     "jest": "^25.1.0",
     "prettier": "^1.18.2",
     "webpack-dashboard": "^3.0.7",
-    "webpack-dev-middleware": "^4.1.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-dev-server": "^3.11.2"
   }
 }

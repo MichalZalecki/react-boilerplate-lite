@@ -4,7 +4,6 @@ const express = require("express");
 const compression = require("compression");
 const path = require("path");
 const logger = require("./middleware/logger");
-const { devMiddleware, hotMiddleware } = require("./middleware/webpack");
 
 const app = express();
 
@@ -13,27 +12,12 @@ app.set("x-powered-by", false);
 app.use(compression());
 app.use(logger);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
-} else {
-  app.use(devMiddleware);
-  app.use(hotMiddleware);
-}
+app.use(express.static("build"));
 
 app.get("*", (req, res) => {
-  if (process.env.NODE_ENV === "production") {
-    res.sendFile(path.resolve("build", "index.html"));
-  } else if (devMiddleware.outputFileSystem) {
-    res.write(devMiddleware.outputFileSystem.readFileSync(path.resolve("build", "index.html")));
-    res.end();
-  } else {
-    res.status(404).send(null);
-  }
+  res.sendFile(path.resolve("build", "index.html"));
 });
 
 const server = app.listen(process.env.PORT || 8080, () => {
-  console.log("Express started at http://localhost:%d\n", server.address().port);
-  if (process.env.NODE_ENV !== "production") {
-    console.log("Waiting for webpack...\n");
-  }
+  console.log("Server started at port %d\n", server.address().port);
 });
