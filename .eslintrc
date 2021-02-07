@@ -2,12 +2,14 @@
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended"
     ],
     "plugins": [
+      "@typescript-eslint",
       "react-hooks"
     ],
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "settings": {
       "react": {
         "version": "detect"
@@ -26,5 +28,13 @@
       "react-hooks/exhaustive-deps": "warn",
       "import/prefer-default-export": "off",
       "import/no-named-as-default": "off"
-    }
+    },
+    "overrides": [
+      {
+        "files": ["{server,webpack}/**/*.js"],
+        "rules": {
+          "@typescript-eslint/no-var-requires": "off"
+        }
+      }
+    ]
 }

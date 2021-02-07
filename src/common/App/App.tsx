@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import cls from "./App.css";
 
-export function App() {
+export function App(): JSX.Element {
   const [text, setText] = useState("Hello, World!");
 
   return (
