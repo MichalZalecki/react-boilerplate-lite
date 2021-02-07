@@ -1,6 +1,4 @@
-# React Boilerlate Lite
-
-[![CircleCI](https://circleci.com/gh/MichalZalecki/react-boilerplate-lite.svg?style=svg)](https://circleci.com/gh/MichalZalecki/react-boilerplate-lite)
+# React Boilerplate Lite
 
 💙 Using **TypeScript**? Checkout the [typescript](https://github.com/MichalZalecki/react-boilerplate-lite/tree/typescript) branch! 💙
 
@@ -35,9 +33,9 @@ yarn install
 ## Usage
 
 ```
-yarn start                # start server
-yarn build                # production build (remember to build with NODE_ENV=production)
-yarn start:dashboard      # start server using webpack-dashboard
+yarn start                # start production server
+yarn dev                  # start development server
+yarn build                # production build
 yarn lint                 # run ESLint
 yarn format               # run prettier
 yarn test                 # run Jest

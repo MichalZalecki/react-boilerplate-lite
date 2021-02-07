@@ -8,10 +8,8 @@ export function App() {
 
   return (
     <div>
-      <h1 className={cls.title} data-testid="title">
-        {text}
-      </h1>
-      <button onClick={() => setText(`${text}!`)} id="bang" type="button">
+      <h1 className={cls.title}>{text}</h1>
+      <button onClick={() => setText(`${text}!`)} type="button">
         Bang!
       </button>
     </div>
