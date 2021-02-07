@@ -26,7 +26,7 @@ React Boilerlate Lite is a minimal boilerplate for modern React apps build on **
 ## Installation
 
 ```
-git clone --depth 1 https://github.com/MichalZalecki/react-boilerplate-lite my-project
+git clone --branch typescript --depth 1 https://github.com/MichalZalecki/react-boilerplate-lite my-project
 cd my-project
 cp .env-example .env
 yarn install
