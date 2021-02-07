@@ -4,10 +4,10 @@ import { App } from "./App";
 
 describe("App", () => {
   it("adds bang after making a bang", () => {
-    const { container, getByTestId } = render(<App />);
-    expect(getByTestId("title").textContent).toEqual("Hello, World!");
-    fireEvent.click(container.querySelector("#bang"));
-    fireEvent.click(container.querySelector("#bang"));
-    expect(getByTestId("title").textContent).toEqual("Hello, World!!!");
+    const root = render(<App />);
+    expect(root.getByText(/Hello, World/).textContent).toEqual("Hello, World!");
+    fireEvent.click(root.getByRole("button", { name: "Bang!" }));
+    fireEvent.click(root.getByRole("button", { name: "Bang!" }));
+    expect(root.getByText(/Hello, World/).textContent).toEqual("Hello, World!!!");
   });
 });
