@@ -4,6 +4,8 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
+const isDevelopment = process.env.NODE_ENV === "development";
+
 function localIdentName() {
   if (process.env.NODE_ENV === "production") return "[hash:base64]";
   return "[path][name]__[local]";
@@ -16,8 +18,8 @@ module.exports = {
 
   output: {
     path: path.resolve("build"),
-    filename: "[name].[hash].js",
-    chunkFilename: "[name].[chunkhash].js",
+    filename: "[name].[fullhash].js",
+    chunkFilename: "[name].[contenthash].js",
     publicPath: "/",
   },
 
@@ -38,14 +40,14 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
-        options: { cacheDirectory: process.env.NODE_ENV === "development" },
+        options: {
+          cacheDirectory: isDevelopment,
+        },
       },
       {
         test: /\.css$/,
         use: [
-          {
-            loader: "style-loader",
-          },
+          "style-loader",
           {
             loader: "css-loader",
             options: {

@@ -1,24 +1,16 @@
-const webpack = require("webpack");
 const config = require("./webpack.config");
 
 module.exports = {
+  ...config,
+
   mode: "development",
 
-  devtool: "cheap-module-eval-source-map", // use eval for faster builds/poor debugging
+  devtool: "eval-cheap-module-source-map", // use "eval" for faster builds and inferior debugging
 
-  entry: {
-    app: ["webpack-hot-middleware/client?reload=true", ...config.entry.app],
+  devServer: {
+    hot: true,
+    overlay: true,
   },
-
-  resolve: config.resolve,
-
-  output: config.output,
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    ...config.plugins,
-  ],
 
   module: {
     rules: [
