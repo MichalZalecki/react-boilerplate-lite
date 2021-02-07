@@ -13,14 +13,15 @@ if (process.env.NODE_ENV === "production") {
 
   const compiler = webpack(config);
 
-  compiler.apply(new webpack.ProgressPlugin());
-  compiler.apply(new DashboardPlugin());
+  // compiler.apply(new webpack.ProgressPlugin());
+  // compiler.apply(new DashboardPlugin());
 
-  const devMiddleware = webpackDevMiddleware(compiler, {
-    contentBase: "build",
-    stats: { colors: true },
-  });
+  console.log(Object.keys(compiler));
 
+  const devMiddleware = webpackDevMiddleware(compiler);
+
+  // TODO: Errors overlay doesn't work yet with webpack 5
+  //       https://github.com/webpack-contrib/webpack-hot-middleware/pull/397
   const hotMiddleware = webpackHotMiddleware(compiler);
 
   module.exports = {

@@ -23,9 +23,11 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", (req, res) => {
   if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve("build", "index.html"));
-  } else {
-    res.write(devMiddleware.fileSystem.readFileSync(path.resolve("build", "index.html")));
+  } else if (devMiddleware.outputFileSystem) {
+    res.write(devMiddleware.outputFileSystem.readFileSync(path.resolve("build", "index.html")));
     res.end();
+  } else {
+    res.status(404).send(null);
   }
 });
 

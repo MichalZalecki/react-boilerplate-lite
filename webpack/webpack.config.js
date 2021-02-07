@@ -18,7 +18,7 @@ module.exports = {
     path: path.resolve("build"),
     filename: "[name].[fullhash].js",
     chunkFilename: "[name].[contenthash].js",
-    publicPath: "/",
+    publicPath: "/", // needed for webpack-dev-middleware?
   },
 
   resolve: {
