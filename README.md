@@ -1,5 +1,7 @@
 # React Boilerplate Lite
 
+![CI](https://github.com/MichalZalecki/react-boilerplate-lite/workflows/CI/badge.svg)
+
 💙 Using **TypeScript**? Checkout the [typescript](https://github.com/MichalZalecki/react-boilerplate-lite/tree/typescript) branch! 💙
 
 **Read more:** [What's the best React boilderplate and why you cannot clone it from GitHub?](https://michalzalecki.com/the-best-react-boilerplate/)
