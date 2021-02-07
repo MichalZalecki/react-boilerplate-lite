@@ -35,9 +35,9 @@ yarn install
 ## Usage
 
 ```
-yarn start                # start server
-yarn build                # production build (remember to build with NODE_ENV=production)
-yarn start:dashboard      # start server using webpack-dashboard
+yarn start                # start production server
+yarn dev                  # start development server
+yarn build                # production build
 yarn lint                 # run ESLint
 yarn format               # run prettier
 yarn test                 # run Jest
