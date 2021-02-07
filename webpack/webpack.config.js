@@ -16,8 +16,8 @@ module.exports = {
 
   output: {
     path: path.resolve("build"),
-    filename: "[name].[hash].js",
-    chunkFilename: "[name].[chunkhash].js",
+    filename: "[name].[fullhash].js",
+    chunkFilename: "[name].[contenthash].js",
     publicPath: "/",
   },
 
@@ -41,11 +41,9 @@ module.exports = {
         options: { cacheDirectory: process.env.NODE_ENV === "development" },
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
-          {
-            loader: "style-loader",
-          },
+          "style-loader",
           {
             loader: "css-loader",
             options: {

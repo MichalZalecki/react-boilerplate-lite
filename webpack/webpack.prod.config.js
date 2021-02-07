@@ -1,23 +1,23 @@
+const TerserPlugin = require("terser-webpack-plugin");
 const config = require("./webpack.config");
 
 module.exports = {
+  ...config,
+
   mode: "production",
 
   devtool: "source-map",
 
-  entry: config.entry,
-
-  resolve: config.resolve,
-
-  output: config.output,
-
   optimization: {
-    minimize: true,
-  },
-
-  plugins: config.plugins,
-
-  module: {
-    rules: [...config.module.rules],
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+        extractComments: false, // do not extract comments to the *.LICENSE.txt file
+      }),
+    ],
   },
 };
