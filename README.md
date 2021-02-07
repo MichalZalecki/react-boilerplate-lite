@@ -1,4 +1,4 @@
-# React Boilerlate Lite
+# React Boilerplate Lite
 
 💙 Using **TypeScript**? Checkout the [typescript](https://github.com/MichalZalecki/react-boilerplate-lite/tree/typescript) branch! 💙
 
