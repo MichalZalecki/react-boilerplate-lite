@@ -20,7 +20,7 @@ module.exports = {
     path: path.resolve("build"),
     filename: "[name].[fullhash].js",
     chunkFilename: "[name].[contenthash].js",
-    publicPath: "/", // needed for webpack-dev-middleware?
+    publicPath: "/",
   },
 
   resolve: {
@@ -45,7 +45,7 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: [
           "style-loader",
           {
